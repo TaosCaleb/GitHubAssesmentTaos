@@ -18,7 +18,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./python_code:/usr/src/app"
-      - "./auth.json:/run/secret/auth.json"
+      - "./auth.json:/usr/src/app/auth.json"
     entrypoint: [ "python3", "server.py", "8080"] 
 configs:
   nginx_conf:

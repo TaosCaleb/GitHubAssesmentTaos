@@ -25,7 +25,7 @@ class S(BaseHTTPRequestHandler):
 
     def do_POST(self):
         try:
-            with open("/run/secret/auth.json") as auth_file:
+            with open("auth-vals.json") as auth_file:
                 auth = json.load(auth_file)
                 api_key = auth["api_token"]
                 target_user = auth["target_user"]

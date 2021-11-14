@@ -13,7 +13,7 @@ This repo creates a local webserver to automatically:
 
 - Install dockercompose and docker
   - https://docs.docker.com/compose/install/
-- Create api key and create `auth.json` file in the same directory  as  `docker-compose.yml`
+- Create api key and create `auth-vals.json` file in the same directory  as  `docker-compose.yml`
   - Ensure the permissions for adding repos, modifying branches, and creating issues are checked
   - contents should look something like :
      ```json
