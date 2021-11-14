@@ -52,7 +52,7 @@ When a new repository is created
 
 - Navigate to your organization
 
-- Go to webhooks
+- Go to Settings -> Webhooks
 
 - Click `Add a webhook`
 
