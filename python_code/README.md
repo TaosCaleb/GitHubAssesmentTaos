@@ -1,4 +1,4 @@
-### How to create web service for protecting branches in an GitHub organization
+# How to create web service for protecting branches in an GitHub organization
 
 ## What is this repo?
 This repo creates a local webserver to automatically:
@@ -32,7 +32,7 @@ This repo creates a local webserver to automatically:
 
 ## Creating server and web hook
 
-### On you pc
+### On your pc
 
 - Create `ngrok` endpoint
   - `ngrok http 4567`

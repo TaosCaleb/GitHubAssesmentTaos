@@ -1,10 +1,12 @@
-### How to create web service for protecting branches in an GitHub organization
+# How to create web service for protecting branches in an GitHub organization
 
 ## What is this repo?
 This repo creates a local webserver to automatically:
 - protect the master branch
 - Create a `README.md` file
 - And create an alert for a target user via mention in an issue
+
+When a new repository is created
 
 ## Prerequisites
 - Git clone this repository to a local pc or server
@@ -32,7 +34,7 @@ This repo creates a local webserver to automatically:
 
 ## Creating server and web hook
 
-### On you pc
+### On your pc
 
 - Create `ngrok` endpoint
   - `ngrok http 4567`
@@ -65,7 +67,7 @@ Error response from daemon: mkdir <some_path/0fec61c6a000e527c1fd9b37dc0d95720ed
 ```
 be sure that the `auth-vals.json` is created before starting docker-compose
 
-- If you happen to see 404 errors in the logs, this may be a permissions issue caused by a few possible reasons
+- If you happen to see `404` errors in the logs, this may be a permissions issue caused by a few possible reasons
  1. The api token was not granted enough permissions
  2. There is an empty `auth-vals.json` file in the `python_code` directory, remove it and restart docker compose
   - This is a result of the the mounting process by docker, if you restart the docker-compose (`docker-compose down` then `docker-compose up`) the empty `auth-vals.json` file will be read instead of the proper `auth-vals.json` file in the parent directory 
