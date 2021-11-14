@@ -116,7 +116,9 @@ class S(BaseHTTPRequestHandler):
                                     r.raise_for_status()
                         else:
                             raise Exception("Content_url not found in payload")             
-                    
+                else:
+                   logging.info("Action is not create, ending")
+                   self._set_response()     
             else:
                 logging.info("No action in payload")
                 self._set_response()
