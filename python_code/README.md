@@ -44,6 +44,7 @@ This repo creates a local webserver to automatically:
 - Click `Add a webhook`
 - Copy and paste the ngrok url into the `Payload URL` field with the added `/payload` path
   - E.g. `http://XXX-XX-XXX-XX-XXX.ngrok.io/payload`
-- Check the radial for `Send me everything`
+- Check the radial for `Let me select individual items`
+  - Check the box for repositories
 - Create webhook
 
