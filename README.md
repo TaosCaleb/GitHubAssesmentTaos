@@ -69,12 +69,12 @@ When a new repository is created
 
 - The code is written to sequentially succeed so if one action fails (e.g. creating a readme file) the rest of the actions will fail (e.g protecting a branch). This is partially a code structure issue and partially how git works (can't protect a branch that doesn't exist)
 
-- If the `auth-vals.json` file does not exist before starting docker compose will attempt to create a directory and you will see an error like this
+- If the `auth-vals.json` file does not exist before starting docker compose will attempt to create a directory `auth-vals.json/` and you will see an error like this
 
 ```shell
 Error response from daemon: mkdir <some_path>/0fec61c6a000e527c1fd9b37dc0d95720ed26edbac40f4807879d6e41b383499: mkdir <some_path>/0fec61c6a000e527c1fd9b37dc0d95720ed26edbac40f4807879d6e41b383499: not a directory
 ```
-be sure that the `auth-vals.json` is created before starting docker-compose
+be sure that the directory `auth-vals.json` and the file `auth-vals.json` is created before starting docker-compose
 
 - If you happen to see `404` errors in the logs, this may be a permissions issue caused by a few possible reasons
   1. The api token was not granted enough permissions
