@@ -53,7 +53,7 @@ This repo creates a local webserver to automatically:
   - Check the box for `Repositories`
 - Create webhook
 
-### Trouble Shooting
+### Trouble-shooting
 - If the newly repo is not public your account will require a paid subscription to protect the branches
 
 - The code is written to sequentially succeed so if one action fails (e.g. creating a readme file) the rest of the actions will fail (e.g protecting a branch). This is partially a code structure issue and partially how git works (can't protect a branch that doesn't exist)
@@ -65,7 +65,8 @@ Error response from daemon: mkdir <some_path/0fec61c6a000e527c1fd9b37dc0d95720ed
 ```
 be sure that the `auth-vals.json` is created before starting docker-compose
 
-- If you happen to see 404 errors in the logs, this may be a permissions issue caused by a few possible reasons
+- If you happen to see `404` errors in the logs, this may be a permissions issue caused by a few possible reasons
  1. The api token was not granted enough permissions
  2. There is an empty `auth-vals.json` file in the `python_code` directory, remove it and restart docker compose
+  - This is a result of the the mounting process by docker, if you restart the docker-compose (`docker-compose down` then `docker-compose up`) the empty `auth-vals.json` file will be read instead of the proper `auth-vals.json` file in the parent directory 
  3. The `auth-vals.json` file is misconfigured, see example above for proper form
