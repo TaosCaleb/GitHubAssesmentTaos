@@ -16,7 +16,7 @@ When a new repository is created
   - https://ngrok.com/download
 
 
-- Install dockercompose and docker on to server or pc
+- Install docker-compose and docker on to server or pc
   - https://docs.docker.com/compose/install/
 
 - Create api token and create `auth-vals.json` file in the same directory  as  `docker-compose.yml`
