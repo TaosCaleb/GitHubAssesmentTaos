@@ -16,7 +16,6 @@ services:
       replicas: 1
     working_dir: /usr/src/app
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
       - "./python_code:/usr/src/app"
       - "./auth-vals.json:/usr/src/app/auth-vals.json"
     entrypoint: [ "python3", "server.py", "8080"] 
