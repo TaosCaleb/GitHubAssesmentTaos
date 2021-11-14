@@ -53,3 +53,14 @@ This repo creates a local webserver to automatically:
   - Check the box for `Repositories`
 - Create webhook
 
+### Trouble Shooting
+- If the newly repo is not public your account will require a paid subscription to protect the branches
+
+- The code is written to sequentially succeed so if one action fails (e.g. creating a readme file) the rest of the actions will fail (e.g protecting a branch). This is partially a code structure issue and partially how git works (can't protect a branch that doesn't exist)
+
+- If the `auth-vals.json` file does not exist before starting docker compose will attempt to create a directory and you will see an error like this
+
+```shell
+Error response from daemon: mkdir <some_path/0fec61c6a000e527c1fd9b37dc0d95720ed26edbac40f4807879d6e41b383499: mkdir <some_path >/0fec61c6a000e527c1fd9b37dc0d95720ed26edbac40f4807879d6e41b383499: not a directory
+```
+be sure that the `auth-vals.json` is created before starting docker-compose
