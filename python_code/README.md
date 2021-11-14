@@ -64,3 +64,8 @@ This repo creates a local webserver to automatically:
 Error response from daemon: mkdir <some_path/0fec61c6a000e527c1fd9b37dc0d95720ed26edbac40f4807879d6e41b383499: mkdir <some_path >/0fec61c6a000e527c1fd9b37dc0d95720ed26edbac40f4807879d6e41b383499: not a directory
 ```
 be sure that the `auth-vals.json` is created before starting docker-compose
+
+- If you happen to see 404 errors in the logs, this may be a permissions issue caused by a few possible reasons
+ 1. The api token was not granted enough permissions
+ 2. There is an empty `auth-vals.json` file in the `python_code` directory, remove it and restart docker compose
+ 3. The `auth-vals.json` file is misconfigured, see example above for proper form
