@@ -65,7 +65,7 @@ When a new repository is created
 - Create webhook
 
 ### Trouble-shooting
-- If the newly repo is not public your account will require a paid subscription to protect the branches
+- If the newly created repo is not public your account will require a paid subscription to protect the branches
 
 - The code is written to sequentially succeed so if one action fails (e.g. creating a readme file) the rest of the actions will fail (e.g protecting a branch). This is partially a code structure issue and partially how git works (can't protect a branch that doesn't exist)
 
