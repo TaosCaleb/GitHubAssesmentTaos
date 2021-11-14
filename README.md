@@ -4,17 +4,20 @@
 This repo creates a local webserver to automatically:
 - protect the master branch
 - Create a `README.md` file
-- And create an alert for the a targer user
+- And create an alert for a target user via mention in an issue
 
 ## Prerequisites
 - Git clone this repository to a local pc or server
-- Install ngrok
+- Install ngrok (if external url is not avaialable otherwhise)
   - https://ngrok.com/download
 
-- Install dockercompose and docker
+
+- Install dockercompose and docker on to server or pc
   - https://docs.docker.com/compose/install/
-- Create api key and create `auth.json` file in the same directory  as  `docker-compose.yml`
-  - Ensure the permissions for adding repos, modifying branches, and creating issues are checked
+
+- Create api token and create `auth-vals.json` file in the same directory  as  `docker-compose.yml`
+  - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+  - Ensure the permissions for adding repos, modifying branches, and creating issues are checked for the api token
   - contents should look something like :
      ```json
      {
@@ -26,6 +29,7 @@ This repo creates a local webserver to automatically:
 
 - Create a github organization
   - https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations
+
 ## Creating server and web hook
 
 ### On you pc
@@ -33,6 +37,7 @@ This repo creates a local webserver to automatically:
 - Create `ngrok` endpoint
   - `ngrok http 4567`
   - Copy the resulting url and save for later
+    - E.g. `https://XXX-XX-XXX-XX-XXX.ngrok.io (<< save this for later (https and not http for security)) -> http://localhost:4567  `
 - Navigate to the dir where the `docker-compose.yml` file is located
 - Run the command `docker-compose up -d`
   - Now your webhook server is running
@@ -43,8 +48,8 @@ This repo creates a local webserver to automatically:
 - Go to webhooks
 - Click `Add a webhook`
 - Copy and paste the ngrok url into the `Payload URL` field with the added `/payload` path
-  - E.g. `http://XXX-XX-XXX-XX-XXX.ngrok.io/payload`
+  - E.g. `https://XXX-XX-XXX-XX-XXX.ngrok.io/payload`
 - Check the radial for `Let me select individual items`
-  - Check the box for repositories
+  - Check the box for `Repositories`
 - Create webhook
 
